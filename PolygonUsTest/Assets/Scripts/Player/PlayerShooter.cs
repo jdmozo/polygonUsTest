@@ -7,13 +7,27 @@ namespace Polygonus
         public GameObject bulletPrefab;
         public Transform shootPoint;
         public float shootForce = 10f;
+        public float shootRate = 0.5f; // The time between consecutive shots
+        public AudioClip _shoot;
+
+
+        private float timeSinceLastShot = 0f; // Keep track of the time since the last shot
 
         private void Update()
         {
-            if (Input.GetButtonDown("Fire1")) // Fire1 is the default input for left mouse button
+            // Check if enough time has passed since the last shot to allow shooting again
+            if (timeSinceLastShot >= shootRate)
             {
-                Shoot();
+                if (Input.GetButtonDown("Fire1")) // Fire1 is the default input for left mouse button
+                {
+                    Shoot();
+                    timeSinceLastShot = 0f; // Reset the time since the last shot
+                    AudioController.instance.PlaySFX(_shoot);
+                }
             }
+
+            // Increment the time since the last shot
+            timeSinceLastShot += Time.deltaTime;
         }
 
         private void Shoot()
@@ -25,3 +39,4 @@ namespace Polygonus
         }
     }
 }
+

@@ -5,9 +5,17 @@ namespace Polygonus
     public class PlayerController : MonoBehaviour
     {
         [SerializeField] private float moveSpeed = 10f;
+        [SerializeField] private AudioClip _audioStart;
 
         private bool isMovingToCursor = false;
         private Vector3 targetPosition;
+        public ShipData currentShip;
+
+
+        private void Start()
+        {
+            AudioController.instance.PlaySFX(_audioStart);
+        }
 
         private void Update() => MouseFollower();
 

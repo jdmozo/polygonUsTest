@@ -26,6 +26,7 @@ Versión de Unity:
 ```
 
 # Elementos Utilizados
+![plot](./resources/banner.png)
 
 ### Audios
 ##### Music
@@ -34,7 +35,9 @@ Versión de Unity:
 
 ##### SFX
 [Ship Start](https://freesound.org/people/InspectorJ/sounds/458586/ "Audio")
-
+[Shoot](https://freesound.org/people/MATRIXXX_/sounds/455251/ "Audio")
+[Explotion](https://freesound.org/people/wubitog/sounds/200465/ "Audio")
+[Coin](https://freesound.org/people/ProjectsU012/sounds/341695/ "Audio")
 
 ### Fonts
 [Space Mono](https://fonts.google.com/specimen/Space+Mono/ "Font")
