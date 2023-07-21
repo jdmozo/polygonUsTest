@@ -26,7 +26,7 @@ Versión de Unity:
 ```
 
 # Elementos Utilizados
-![plot](./resources/banner.png)
+
 
 ### Audios
 ##### Music
@@ -47,7 +47,7 @@ Versión de Unity:
 (A furuto se puede agregar a más plataformas)
 #
 ## Tomas del juego
-
+![Toma 1](./resources/banner.png)
 
 ## Licencia
 MIT

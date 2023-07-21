@@ -7,20 +7,13 @@ namespace Polygonus
     public class LobbyMenu : MonoBehaviour
     {
         [SerializeField] private float _moveDuration = 1.0f;
+        [SerializeField] private AudioClip _startLobby;
         private bool menuIsActive = true;
 
-        private void Update()
+        private void Start()
         {
-            // Check if the menu is active and the space key is pressed
-            if (menuIsActive && Input.GetKeyDown(KeyCode.Space))
-            {
-                // Disable the menu to prevent multiple calls
-                menuIsActive = false;
-
-                // Move the menu up using LeanTween
-                StartCoroutine(MoveMenuCoroutine());
-            }
-            
+            AudioController.instance.PlayMusic(_startLobby);
+            StartCoroutine(MoveMenuCoroutine());
         }
 
         private IEnumerator MoveMenuCoroutine()
@@ -33,13 +26,14 @@ namespace Polygonus
 
             // Move the menu up using LeanTween
             LeanTween.moveY(gameObject, Screen.height, _moveDuration).setOnComplete(OnMoveComplete);
+            GameManager.instance.StartGame();
+
         }
 
         private void OnMoveComplete()
         {
             // Set the menu to inactive and start the game
             gameObject.SetActive(false);
-            GameManager.instance.StartGame();
         }
     }
 }
