@@ -25,6 +25,20 @@ Versión de Unity:
 ------------------
 ```
 
+# Elementos Utilizados
+
+### Audios
+##### Music
+[Lobby Music](https://freesound.org/people/Xythe/sounds/516912/ "Audio")
+[In Game Music](https://pixabay.com/music/techno-trance-melodic-techno-03-extended-version-moogify-9867/ "Audio")
+
+##### SFX
+[Ship Start](https://freesound.org/people/InspectorJ/sounds/458586/ "Audio")
+
+
+### Fonts
+[Space Mono](https://fonts.google.com/specimen/Space+Mono/ "Font")
+
 ### Plataforma principal:
 ##### `Windows 10 u 11`
 (A furuto se puede agregar a más plataformas)

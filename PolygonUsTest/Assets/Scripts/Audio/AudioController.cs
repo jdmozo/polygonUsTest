@@ -1,21 +1,30 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Audio;
 
 namespace Polygonus
 {
     public class AudioController : MonoBehaviour
     {
-        // Start is called before the first frame update
-        void Start()
+        public static AudioController instance;
+
+        [SerializeField] private AudioMixer _audioMixer;
+
+        private void Awake() => instance = this;
+
+        public void PlaySFX()
         {
-        
+
         }
 
-        // Update is called once per frame
-        void Update()
+        public void PlayMusic()
         {
-        
+
         }
+    }
+
+    public enum AudioType
+    {
+        SFX,
+        Music
     }
 }

@@ -1,28 +1,28 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 namespace Polygonus
 {
     public class PlayerController : MonoBehaviour
     {
-        [SerializeField] private float followSpeed = 5f;
         [SerializeField] private float moveSpeed = 10f;
 
         private bool isMovingToCursor = false;
         private Vector3 targetPosition;
 
-        private void Update()
+        private void Update() => MouseFollower();
+
+        private void MouseFollower()
         {
             // Follow the mouse cursor
             Vector3 mousePosition = Input.mousePosition;
             mousePosition.z = -Camera.main.transform.position.z;
             Vector3 targetWorldPosition = Camera.main.ScreenToWorldPoint(mousePosition);
+            Vector3 targetWorldToScreen = Camera.main.WorldToScreenPoint(transform.position);
 
             // Calculate the direction to rotate towards the mouse cursor
-            Vector3 directionToCursor = targetWorldPosition - transform.position;
+            Vector3 directionToCursor = mousePosition - targetWorldToScreen;
             float angle = Mathf.Atan2(directionToCursor.y, directionToCursor.x) * Mathf.Rad2Deg;
-            transform.rotation = Quaternion.Euler(new Vector3(0, 0, angle));
+            transform.rotation = Quaternion.AngleAxis(angle, Vector3.forward);
 
             // Move to the cursor position on right mouse button press
             if (Input.GetMouseButton(1))
@@ -30,6 +30,9 @@ namespace Polygonus
                 targetPosition = targetWorldPosition;
                 isMovingToCursor = true;
             }
+
+            if (Input.GetMouseButtonUp(1))
+                isMovingToCursor = false;
 
             // Move towards the cursor position using MoveTowards
             if (isMovingToCursor)

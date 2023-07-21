@@ -9,15 +9,15 @@ namespace Polygonus
         [SerializeField] private float animationDuration = 1f;
         [SerializeField] private int colorSteps = 10;
         [SerializeField] private bool loopable = true;
+        [SerializeField] private bool customColors = true;
         private Camera cameraComponent;
         private int currentIndex = 0;
-        private Color[] rainbowColors;
+        [SerializeField] private Color[] rainbowColors;
 
         private void Start()
         {
             cameraComponent = GetComponent<Camera>();
-            //GenerateRainbowColors();
-            GenerateCustomColors();
+            GenerateColors();
             StartCoroutine(ChangeCameraColorCoroutine());
         }
 
@@ -60,9 +60,10 @@ namespace Polygonus
         /// <summary>
         /// Generate With the custom Colors the 
         /// </summary>
-        private void GenerateCustomColors()
+        private void GenerateColors()
         {
-
+            if (!customColors)
+                GenerateRainbowColors();
         }
 
         private void OnDisable()
