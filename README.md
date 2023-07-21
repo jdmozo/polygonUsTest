@@ -24,6 +24,8 @@ Versión de Unity:
 2021.3.24f1
 ------------------
 ```
+[Release of the Game](https://github.com/jdmozo/polygonUsTest/releases "Game") Descarguenlo para pobrar.
+
 
 # Elementos Utilizados
 
@@ -48,6 +50,8 @@ Versión de Unity:
 #
 ## Tomas del juego
 ![Toma 1](./resources/banner.png)
+
+
 
 ## Licencia
 MIT

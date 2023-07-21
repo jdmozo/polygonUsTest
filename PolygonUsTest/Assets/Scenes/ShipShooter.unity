@@ -1510,7 +1510,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _moveDuration: 5
-  _startLobby: {fileID: 8300000, guid: 32ad15b6dc22fb14186d51351e19057b, type: 3}
+  _startLobby: {fileID: 8300000, guid: 88553c91631c2474baa57b20fcaa0aeb, type: 3}
 --- !u!1 &901543056
 GameObject:
   m_ObjectHideFlags: 0
